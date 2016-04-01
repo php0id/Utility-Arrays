@@ -1,0 +1,17 @@
+{
+    "name": "php0id/utility-arrays",
+    "type": "library",
+    "description": "PHP arrays utilities",
+    "keywords": ["arrays", "utilities", "php"],
+    "homepage": "http://php0id.web-box.ru/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "php0id",
+            "homepage": "http://php0id.web-box.ru/"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1"
+    }
+}

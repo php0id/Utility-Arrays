@@ -1,2 +1,2 @@
 # Utility-Arrays
-PHP array utility
+PHP arrays utilities.

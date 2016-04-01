@@ -4,7 +4,7 @@ PHP arrays utilities.
 Installing
 ---
 Add following code to your "composer.json" file
-`
+```json
     "repositories": [
         {
             "type": "vcs",
@@ -14,5 +14,5 @@ Add following code to your "composer.json" file
     "require": {
         "php0id/utility-arrays": "dev-develop"
     }
-`
-and run `composer update`
+```
+and run `composer update`.

@@ -162,6 +162,36 @@ class Arrays
     }
 
     /**
+     * Sort two-dimensional array by column preserving row keys.
+     *
+     * @param  array      &$array    Array
+     * @param  int|string $column    Sort column
+     * @param  int        $sort      Sort type: {@see http://php.net/manual/en/function.array-multisort.php}
+     * @param  int        $direction Sort direction: SORT_ASC | SORT_DESC
+     * @return void
+     */
+    public static function sortByCol(array &$array, $column, $sort = SORT_STRING, $direction = SORT_ASC)
+    {
+        if (!sizeof($array)) {
+            return;
+        }
+
+        $index = [];
+        $i = 0;
+        foreach ($array as $key => $row) {
+            $index['pos'][$i]  = $key;
+            $index['name'][$i] = $row[$column];
+            ++$i;
+        }
+        array_multisort($index['name'], $sort, $direction, $index['pos']);
+        $result = array();
+        for ($j = 0; $j < $i; ++$j) {
+            $result[$index['pos'][$j]] = $array[$index['pos'][$j]];
+        }
+        $array = $result;
+    }
+
+    /**
      * Filters two-dimensional array for a given pair key/value.
      *
      * @param  mixed $row
